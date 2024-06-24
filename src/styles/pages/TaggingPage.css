@@ -1,0 +1,18 @@
+.tagging-page-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 columnas */
+  gap: 10px; /* Espacio entre las columnas */
+  height: 100vh; /* Altura completa de la ventana */
+}
+
+.pdf-viewer-container {
+  grid-column: span 8; /* Ocupa 10 columnas */
+  padding: 10px;
+  overflow: auto; /* Asegura que el contenido sea desplazable si es necesario */
+}
+
+.tag-form-container {
+  grid-column: span 4; /* Ocupa 2 columnas */
+  padding: 10px; /* Espaciado interior */
+  background-color: #fff; /* Fondo del formulario */
+}

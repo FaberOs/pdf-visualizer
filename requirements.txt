@@ -1,0 +1,7 @@
+npm install react-router-dom
+npm install react-dropzone
+npm install react-icons
+npm install pdfjs-dist@3.4.120
+npm install @react-pdf-viewer/core@3.12.0 
+npm install @react-pdf-viewer/default-layout 
+npm install @react-pdf-viewer/highlight
