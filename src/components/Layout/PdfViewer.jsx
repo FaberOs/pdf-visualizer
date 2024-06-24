@@ -1,3 +1,6 @@
+/* PdfViewer, codigo original de la documentacion, sin modificaciones */
+/* https://github.com/react-pdf-viewer/examples/blob/main/highlight/HighlightExample.tsx */
+
 import React, { useContext, useEffect, useState, useRef } from "react";
 import {
   Worker,

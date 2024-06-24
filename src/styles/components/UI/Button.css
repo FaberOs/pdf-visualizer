@@ -18,3 +18,18 @@
   background-color: #af97f4;
   cursor: not-allowed;
 }
+
+.loading-icon {
+  font-size: 20px;
+  margin: 0 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

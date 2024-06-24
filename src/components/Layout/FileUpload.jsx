@@ -2,7 +2,6 @@ import React, { useContext, useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { PdfContext } from "../../context/PdfContext";
 import { useNavigate } from "react-router-dom";
-import { BiSolidFilePdf } from "react-icons/bi";
 import { PiFilesFill } from "react-icons/pi";
 import "../../styles/components/Layout/FileUpload.css";
 

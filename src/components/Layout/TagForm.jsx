@@ -19,6 +19,7 @@ const TagForm = () => {
   const [tagType, setTagType] = useState("");
   const [isTemplateNameValid, setIsTemplateNameValid] = useState(false);
   const [isTagNameValid, setIsTagNameValid] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleAddTag = () => {
     const newTag = { name: tagName, type: tagType, text: selectedText };
@@ -45,6 +46,7 @@ const TagForm = () => {
 
   const handleSelectPosition = () => {
     if (tagType === "Texto") {
+      setLoading(true);
       setSelectingText(true);
     }
   };
@@ -53,12 +55,14 @@ const TagForm = () => {
     if (selectedText) {
       handleAddTag();
       setSelectingText(false);
+      setLoading(false);
     }
   }, [selectedText]);
 
   return (
     <div className="tag-form-container">
       <h2>Etiquetado de datos</h2>
+
       <div className="input-button-row">
         <InputComponent
           label="Nombre de la plantilla"
@@ -67,13 +71,11 @@ const TagForm = () => {
           placeholder="Nombre de la plantilla"
           isValid={isTemplateNameValid}
         />
-        <div className="input-button-row">
-          <ButtonComponent
-            label="Guardar"
-            onClick={handleSaveTemplate}
-            disabled={!isTemplateNameValid}
-          />
-        </div>
+        <ButtonComponent
+          label="Guardar"
+          onClick={handleSaveTemplate}
+          disabled={!isTemplateNameValid}
+        />
       </div>
       <InputComponent
         label="Crear una nueva etiqueta"
@@ -97,6 +99,7 @@ const TagForm = () => {
         label="Seleccionar posición"
         onClick={handleSelectPosition}
         disabled={tagType !== "Texto"}
+        loading={loading && tagType === "Texto"}
       />
       <h3>Etiquetas actuales</h3>
       {tags.length === 0 ? (
